@@ -77,14 +77,23 @@ const MainListItems = (props) => {
         primary="Dashboard"
         icon={<DashboardOutlinedIcon />}
       />
-      <ListItemLink
-        to="/connections"
-        primary={i18n.t("mainDrawer.listItems.connections")}
-        icon={
-          <Badge badgeContent={connectionWarning ? "!" : 0} color="error">
-            <SyncAltIcon />
-          </Badge>
-        }
+
+      <Can
+        role={user.profile}
+        perform="connections-page:view"
+        yes={() => (
+          <>
+            <ListItemLink
+              to="/connections"
+              primary={i18n.t("mainDrawer.listItems.connections")}
+              icon={
+                <Badge badgeContent={connectionWarning ? "!" : 0} color="error">
+                  <SyncAltIcon />
+                </Badge>
+              }
+            />
+          </>
+        )}
       />
       <ListItemLink
         to="/tickets"

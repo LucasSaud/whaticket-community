@@ -12,6 +12,7 @@ const rules = {
 			"ticket-options:deleteTicket",
 			"ticket-options:transferWhatsapp",
 			"contacts-page:deleteContact",
+			"connections-page:view"
 		],
 	},
 };
